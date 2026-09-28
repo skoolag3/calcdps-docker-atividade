@@ -1,8 +1,1 @@
-{
-  "name": "calcdps-docker",
-  "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bookworm",
-  "features": {
-    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
-  },
-  "postCreateCommand": "python -m py_compile app.py"
-}
+{}
