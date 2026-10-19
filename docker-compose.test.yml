@@ -4,3 +4,5 @@ services:
       context: .
       dockerfile: Dockerfile
     command: ["python", "-m", "unittest", "discover", "-s", "tests", "-v"]
+    volumes:
+      - .:/app:ro
