@@ -1,0 +1,6 @@
+services:
+  calcdps-test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ["python", "-m", "unittest", "discover", "-s", "tests", "-v"]

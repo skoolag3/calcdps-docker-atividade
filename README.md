@@ -28,3 +28,22 @@ Resultado esperado:
 - Healthcheck: permite verificar automaticamente se a API está respondendo.
 
 A evidência de execução deve ser capturada no terminal do Codespace após rodar os comandos acima.
+
+## Executar com Docker Compose
+
+```bash
+docker compose up -d --build
+docker compose ps
+curl "http://localhost:8000/?damage=250&attacks=2&crit=20"
+docker compose down
+```
+
+O Compose reutiliza a imagem definida no Dockerfile, publica a porta 8000, cria uma rede isolada e reinicia o serviço automaticamente com `unless-stopped`. Como a calculadora não possui banco de dados, cache ou mensageria, não são necessários serviços adicionais nem volumes persistentes.
+
+## Compose de testes
+
+```bash
+docker compose -f docker-compose.test.yml run --rm calcdps-test
+```
+
+Esse arquivo executa o teste automatizado sem iniciar um servidor permanente.
