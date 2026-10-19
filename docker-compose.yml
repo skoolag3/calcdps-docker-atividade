@@ -4,7 +4,6 @@ services:
       context: .
       dockerfile: Dockerfile
     image: calcdps:1.0
-    container_name: calcdps
     ports:
       - "8000:8000"
     restart: unless-stopped
